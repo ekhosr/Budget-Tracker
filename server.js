@@ -23,15 +23,11 @@ app.use(express.static("public"));
 
 // });
 
-mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/budgetTracker',
-  {
+mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/budget`, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-  }
-);
+    useFindAndModify: false,
+    useUnifiedTopology: true
+});
 
 
 
